@@ -39,8 +39,15 @@
 
 .app-container {
   display: flex;
-  height: 100vh;
-  overflow: hidden;
+  flex-direction: row;
+  min-height: 100vh;
+}
+
+/* Responsive layout: stack panels vertically on small screens */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
 }
 
 .panel {
@@ -55,16 +62,11 @@
   overflow-y: auto;
 }
 
-.middle-panel {
+.middle-panel, .right-panel {
   flex: 1;
-  background-color: #fff;
-  overflow-y: auto;
-}
-
-.right-panel {
-  width: 300px;
-  background-color: #f9f9f9;
-  overflow-y: auto;
+  min-width: 300px;
+  box-sizing: border-box;
+  padding: 16px;
 }
 
 .header-toolbar {
@@ -96,4 +98,13 @@
   margin-top: 10px;
   display: flex;
   gap: 5px;
+}
+
+/* Responsive adjustments for Middle and Right panels on small screens */
+@media (max-width: 768px) {
+  .middle-panel, .right-panel {
+    flex: none;
+    width: 100%;
+    margin-bottom: 16px;
+  }
 }

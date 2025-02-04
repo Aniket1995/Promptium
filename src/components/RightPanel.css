@@ -1,0 +1,16 @@
+/* Styles for RightPanel */
+.right-panel {
+  flex: 1;
+  min-width: 300px;
+  box-sizing: border-box;
+  padding: 16px;
+}
+
+/* Responsive adjustments for RightPanel on small screens */
+@media (max-width: 768px) {
+  .right-panel {
+    flex: none;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+} 
